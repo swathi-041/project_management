@@ -4,7 +4,9 @@ const mysql = require("mysql2");
 
 const app = express();
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+    origin: 'https://projectmaanagement.netlify.app/'
+}));
 
 const pool = mysql.createPool({
     host: "localhost",

@@ -6,7 +6,7 @@ const Student = () => {
     const [project, setProject] = useState([]);
 
     useEffect(() => {
-        axios.get('http://localhost:3080/')
+        axios.get('https://project-management-duum.onrender.com/')
             .then(res => {
                 console.log('Data from API:', res.data);
                 setProject(res.data);
@@ -16,7 +16,7 @@ const Student = () => {
 
     const handleDelete = async (id) => {
         try {
-            await axios.delete('http://localhost:3080/project/' + id);
+            await axios.delete('https://project-management-duum.onrender.com/project/' + id);
             setProject(project.filter(pro => pro.id !== id));
         } catch (err) {
             console.log(err);

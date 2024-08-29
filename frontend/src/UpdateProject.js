@@ -12,7 +12,7 @@ const UpdateProject = () => {
 
     // Fetch existing project details to pre-fill the form
     useEffect(() => {
-        axios.get(`http://localhost:3080/project/${id}`)
+        axios.get(`https://project-management-duum.onrender.com/project/${id}`)
             .then(res => {
                 const project = res.data;
                 setProjectname(project.ProjectName);

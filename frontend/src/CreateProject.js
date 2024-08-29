@@ -11,7 +11,7 @@ const CreateProject = () => {
 
     function handleSubmit(event) {
         event.preventDefault();
-        axios.post('http://localhost:3080/create', { projectname, projectdescription, professor, contact })
+        axios.post('https://project-management-duum.onrender.com/create', { projectname, projectdescription, professor, contact })
             .then(res => {
                 console.log(res);
                 navigate('/');

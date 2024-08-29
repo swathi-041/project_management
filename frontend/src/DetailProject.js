@@ -7,7 +7,7 @@ const DetailProject = () => {
     const [project, setProject] = useState(null);
 
     useEffect(() => {
-        axios.get(`http://localhost:3080/project/${id}`)
+        axios.get(`https://project-management-duum.onrender.com/${id}`)
             .then(res => {
                 setProject(res.data);
             })

@@ -5,7 +5,8 @@ const mysql = require("mysql2");
 const app = express();
 app.use(express.json());
 app.use(cors({
-    origin: 'https://project-management-lovat.vercel.app'
+    origin: ['https://project-management-lovat.vercel.app',
+        'https://projecttmanagement.netlify.app']
 }));
 
 const pool = mysql.createPool({

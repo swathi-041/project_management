@@ -6,18 +6,13 @@ const Student = () => {
     const [project, setProject] = useState([]);
 
     useEffect(() => {
-        axios.get('https://project-management-duum.onrender.com/')
+        axios.get('https://project-management-duum.onrender.com')
             .then(res => {
-                if (Array.isArray(res.data)) {
-                    setProject(res.data);
-                } else {
-                    console.error('Unexpected data format:', res.data);
-                    setProject([]);
-                }
+                console.log('Data from API:', res.data);
+                setProject(res.data);
             })
-            .catch(err => console.error('Error fetching data:', err));
+            .catch(err => console.log('Error fetching data:', err));
     }, []);
-
 
     const handleDelete = async (id) => {
         try {
@@ -27,18 +22,6 @@ const Student = () => {
             console.log(err);
         }
     }
-    useEffect(() => {
-    axios.get('https://project-management-duum.onrender.com/')
-        .then(res => {
-            if (Array.isArray(res.data)) {
-                setProject(res.data);
-            } else {
-                console.error('Unexpected data format:', res.data);
-                setProject([]);
-            }
-        })
-        .catch(err => console.error('Error fetching data:', err));
-}, []);
 
     return (
         <div
